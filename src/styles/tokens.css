@@ -1,0 +1,86 @@
+/*
+ * Design tokens: the single source of truth for colour, type, spacing and shape.
+ * Components reference these variables only; no raw hex values or magic numbers.
+ *
+ * Breakpoints (mobile-first, min-width). CSS variables cannot be used inside
+ * media queries, so these values are repeated as literals in component CSS:
+ *   sm  640px   large phones
+ *   md  960px   tablets / small laptops
+ *   lg  1200px  desktop
+ */
+
+:root {
+  /* Colour: brand */
+  --color-primary: #bc0f2c;
+  --color-primary-dark: #8f0b22;
+  --color-primary-soft: #ffeff1;
+  --color-primary-text: #a00d26;
+
+  /* Colour: neutrals */
+  --color-ink: #170006;
+  --color-text: #5c5c54;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f6f2;
+  --color-border: #e6e4dd;
+  --color-border-strong: #d6d3cb;
+
+  /* Colour: on dark / on brand backgrounds */
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #d9cfd1;
+  --color-on-primary-muted: #ffe3e7;
+
+  /* Colour: feedback */
+  --color-error: #a00d26;
+  --color-focus-ring: rgb(188 15 44 / 0.35);
+
+  /* Typography */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 0.8125rem; /* 13px: eyebrows, captions */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px: body */
+  --font-size-lg: 1.0625rem; /* 17px: lead paragraphs */
+  --font-size-h3: 1.3125rem; /* 21px */
+  --font-size-h2: clamp(1.875rem, 3.6vw, 2.75rem); /* 30–44px */
+  --font-size-h1: clamp(2.375rem, 5.2vw, 4.125rem); /* 38–66px */
+
+  --line-height-tight: 1.1;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --letter-spacing-heading: -0.02em;
+  --letter-spacing-eyebrow: 0.08em;
+
+  /* Spacing scale */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-24: 6rem; /* 96px */
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-gutter: var(--space-6);
+  --section-padding: clamp(3.5rem, 7vw, 6rem); /* 56–96px */
+  --touch-target: 44px;
+
+  /* Shape */
+  --radius-sm: 10px; /* buttons, inputs */
+  --radius-md: 16px; /* cards */
+  --radius-lg: 24px; /* feature blocks */
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgb(23 0 6 / 0.04), 0 8px 24px rgb(23 0 6 / 0.06);
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+}
