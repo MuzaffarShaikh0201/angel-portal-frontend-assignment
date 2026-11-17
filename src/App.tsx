@@ -1,23 +1,23 @@
-import Button from './components/ui/Button';
-import Section from './components/ui/Section';
-import SectionHeading from './components/ui/SectionHeading';
+import { useEffect } from 'react';
+import MainLayout from './components/layout/MainLayout';
+import { notFoundRoute, routes } from './routes';
+import { matchRoute } from './router/paths';
+import { useRouter } from './router/useRouter';
 
-// Temporary shell to exercise the design system; replaced by the router and layout in feat/router-layout.
+/** Resolves the current path to a page, keeps document.title in sync and renders it inside the layout. */
 function App() {
+  const { pathname } = useRouter();
+  const route = matchRoute(routes, pathname) ?? notFoundRoute;
+  const Page = route.component;
+
+  useEffect(() => {
+    document.title = route.title;
+  }, [route.title]);
+
   return (
-    <main>
-      <Section labelledBy="welcome-title">
-        <SectionHeading
-          id="welcome-title"
-          level={1}
-          eyebrow="Think global, Study at Ascencia Malta"
-          title="Welcome to Ascencia Malta"
-        >
-          <p>We are eager to give you the best education at Ascencia Malta</p>
-        </SectionHeading>
-        <Button href="#">Apply Now</Button>
-      </Section>
-    </main>
+    <MainLayout>
+      <Page />
+    </MainLayout>
   );
 }
 
