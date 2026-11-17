@@ -1,0 +1,21 @@
+.section {
+  padding-block: var(--section-padding);
+  scroll-margin-top: var(--space-16);
+}
+
+.default {
+  background: var(--color-surface);
+}
+
+.alt {
+  background: var(--color-surface-alt);
+}
+
+.dark {
+  background: var(--color-ink);
+  color: var(--color-on-dark-muted);
+}
+
+.dark :where(h1, h2, h3, h4) {
+  color: var(--color-on-dark);
+}

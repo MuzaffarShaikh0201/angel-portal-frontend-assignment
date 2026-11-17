@@ -1,0 +1,29 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 46rem;
+  margin-bottom: var(--space-12);
+}
+
+.center {
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.title {
+  margin: 0;
+}
+
+.intro {
+  font-size: var(--font-size-lg);
+}
