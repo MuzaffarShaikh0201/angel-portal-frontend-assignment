@@ -1,0 +1,171 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Dark strip with opening hours, phone and email. */
+.topBar {
+  background: var(--color-ink);
+  color: var(--color-on-dark-muted);
+  font-size: var(--font-size-xs);
+}
+
+.topBarInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-6);
+  padding-block: var(--space-2);
+}
+
+.topBarInner a {
+  color: var(--color-on-dark);
+  text-decoration: none;
+}
+
+.topBarInner a:hover {
+  text-decoration: underline;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.logo img {
+  width: auto;
+  height: 44px;
+}
+
+/* Mobile: hamburger toggle + collapsible nav. */
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.menuIcon,
+.menuIcon::before,
+.menuIcon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 2px;
+  transition: transform var(--transition-base);
+}
+
+.menuIcon {
+  position: relative;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menuIcon::before {
+  top: -6px;
+}
+
+.menuIcon::after {
+  top: 6px;
+}
+
+/* The hamburger turns into an "X" while the menu is open. */
+.menuToggle[aria-expanded='true'] .menuIcon {
+  background: transparent;
+}
+
+.menuToggle[aria-expanded='true'] .menuIcon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggle[aria-expanded='true'] .menuIcon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-4);
+  padding-block: var(--space-2) var(--space-3);
+}
+
+.navOpen {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.navLink:hover,
+.navLink[aria-current='page'] {
+  color: var(--color-primary);
+}
+
+.navLink[aria-current='page'] {
+  border-bottom-color: var(--color-primary);
+}
+
+/* Desktop: inline nav, no toggle. */
+@media (min-width: 960px) {
+  .menuToggle {
+    display: none;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .nav {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 0;
+  }
+
+  .navList {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+}

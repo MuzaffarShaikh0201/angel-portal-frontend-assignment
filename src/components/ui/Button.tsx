@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import Link from '../../router/Link';
 import { buttonClassName, type ButtonVariant } from './buttonClassName';
 
 type CommonProps = {
@@ -20,16 +21,16 @@ type ButtonAsButton = CommonProps &
 export type ButtonProps = ButtonAsLink | ButtonAsButton;
 
 /**
- * Renders an <a> when given an href (navigation) and a <button> otherwise (actions),
- * so the element always matches its semantics.
+ * Renders a link when given an href (navigation) and a <button> otherwise (actions),
+ * so the element always matches its semantics. Links go through the router <Link>.
  */
 function Button(props: ButtonProps) {
   if (props.href !== undefined) {
     const { href, variant, className, children } = props;
     return (
-      <a href={href} className={buttonClassName(variant, className)}>
+      <Link href={href} className={buttonClassName(variant, className)}>
         {children}
-      </a>
+      </Link>
     );
   }
 
