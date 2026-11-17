@@ -27,3 +27,61 @@ export type SocialIconName = 'facebook' | 'instagram' | 'linkedin' | 'youtube' |
 
 /** label is used as the accessible name only; the original shows icons without text. */
 export type SocialLink = LinkItem & { icon: SocialIconName };
+
+/** Eyebrow + title + optional intro: the heading block used by most sections. */
+export type SectionCopy = {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+};
+
+/** A programme card. The Award card has no MQF/EQF level on the original. */
+export type Programme = {
+  name: string;
+  level?: string;
+  ects: string;
+  mode: string;
+  href: string;
+  image: ImageAsset;
+};
+
+/** A figure in the stats band, e.g. { value: '150+', label: 'Courses & Programmes Available' }. */
+export type Stat = {
+  value: string;
+  label: string;
+};
+
+/** A titled block of text: core values, mission/vision, about facts. */
+export type TextBlock = {
+  title: string;
+  paragraphs: string[];
+};
+
+export type LogoGroup = {
+  title: string;
+  logos: ImageAsset[];
+};
+
+/** An Instagram post shown through Instagram's own embed. */
+export type InstagramPost = {
+  permalink: string;
+};
+
+export type CallToAction = {
+  title: string;
+  text: string;
+  action: LinkItem;
+};
+
+/** One of the cards beside the contact form (call / email / location). */
+export type ContactCard = {
+  title: string;
+  text: string;
+  value: string;
+  href?: string;
+};
+
+export type FormFieldCopy = {
+  label: string;
+  placeholder: string;
+};
