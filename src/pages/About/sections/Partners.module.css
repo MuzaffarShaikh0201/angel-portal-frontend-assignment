@@ -1,0 +1,14 @@
+/* The logo files are square with their own light background, so they fill the card edge to edge. */
+.logoCard {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

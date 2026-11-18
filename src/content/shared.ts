@@ -1,3 +1,4 @@
+import { image } from '../lib/asset';
 import type { CallToAction, SectionCopy, Stat } from '../types/content';
 
 /** Content shared by several pages. Verbatim visible copy from ascenciamalta.edu.mt. */
@@ -23,3 +24,6 @@ export const joinUs: CallToAction = {
   text: 'Do you wish to join the Ascencia Malta Community? The registration and admission procedure is simple and totally free. Our team can get back to you for any questions!',
   action: { label: 'GET IN TOUCH', href: '/contact' },
 };
+
+/** Decorative photo behind the About and Contact page banners. */
+export const pageBannerBackground = image('bg/breadcrumb_bg.webp', '', 1920, 400);
