@@ -2,10 +2,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { contactCards, contactInfoHeading } from '../../../content/contact';
 import styles from './ContactInfo.module.css';
 
-/**
- * "Let us know how we can help": phone, email and address cards.
- * Rendered inside the form's band (one block on the original), as its own labelled region.
- */
 function ContactInfo() {
   return (
     <section className={styles.info} aria-labelledby="contact-info-title">

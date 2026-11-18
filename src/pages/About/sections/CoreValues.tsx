@@ -3,7 +3,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { coreValueIcon, coreValues, coreValuesHeading } from '../../../content/about';
 import styles from './CoreValues.module.css';
 
-/** "Our Core Value": four diversity statements, each with the graduation-cap icon. */
 function CoreValues() {
   return (
     <Section tone="alt" labelledBy="core-values-title">

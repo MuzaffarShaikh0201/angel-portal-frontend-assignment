@@ -24,11 +24,6 @@ const AUTOCOMPLETE: Record<ContactField, string> = {
   message: 'off',
 };
 
-/**
- * "Send us a message" form. Validates on submit and shows one error at a time under its field.
- * The site is static, so a valid submit has no backend to post to: it clears the form and
- * shows the same success popup the original shows after its request succeeds.
- */
 function ContactForm() {
   const [values, setValues] = useState<ContactFormValues>(EMPTY_VALUES);
   const [error, setError] = useState<ContactFormError | null>(null);
@@ -40,7 +35,6 @@ function ContactForm() {
   function handleChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const field = event.target.name as ContactField;
     setValues((current) => ({ ...current, [field]: event.target.value }));
-    // The message refers to the old value, so it goes as soon as the visitor edits that field.
     if (error?.field === field) setError(null);
   }
 
@@ -138,7 +132,6 @@ function ContactForm() {
   );
 }
 
-/** Speech-bubble icon from the original button. Decorative. */
 function SendIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true">

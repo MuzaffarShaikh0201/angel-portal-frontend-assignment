@@ -1,13 +1,4 @@
-/*
- * Design tokens: the single source of truth for colour, type, spacing and shape.
- * Components reference these variables only; no raw hex values or magic numbers.
- *
- * Breakpoints (mobile-first, min-width). CSS variables cannot be used inside
- * media queries, so these values are repeated as literals in component CSS:
- *   sm  640px   large phones
- *   md  960px   tablets / small laptops
- *   lg  1200px  desktop
- */
+/* breakpoints: 640px, 960px, 1200px (min-width) */
 
 :root {
   /* Colour: brand */

@@ -25,7 +25,6 @@
   list-style: none;
 }
 
-/* Two per row on phones, up to 11rem wide; a lone last logo stays centred. */
 .logoCard {
   flex: 0 1 calc(50% - var(--space-2));
   max-width: 11rem;

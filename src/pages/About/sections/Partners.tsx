@@ -4,7 +4,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { partners, partnersHeading } from '../../../content/about';
 import styles from './Partners.module.css';
 
-/** Partner institution logos in a carousel with arrows, as the original's slider. */
 function Partners() {
   return (
     <Section tone="alt" labelledBy="partners-title">

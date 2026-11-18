@@ -11,8 +11,6 @@ import type {
   TextBlock,
 } from '../types/content';
 
-/** Home page content. Verbatim visible copy (and original alt text) from ascenciamalta.edu.mt. */
-
 const ORIGIN = 'https://www.ascenciamalta.edu.mt';
 
 export const hero = {
@@ -24,7 +22,6 @@ export const hero = {
     { label: 'Explore programmes', href: '/#programmes' },
     { label: 'Talk with a teacher', href: '/contact' },
   ] satisfies LinkItem[],
-  // Decorative background photo (CSS background on the original), so no alt text.
   background: image('hero/hero_img02.jpg', '', 1920, 790),
 };
 
@@ -105,7 +102,6 @@ export const programmes: Programme[] = [
 
 export const campusNewsHeading: SectionCopy = { title: 'Campus News' };
 
-/** The five stories on the original; the middle one is the large featured story with a byline. */
 export const campusNews: { featured: NewsItem; side: NewsItem[] } = {
   featured: {
     title: 'Open Day at Ascencia Malta',
@@ -164,7 +160,6 @@ export const campusNews: { featured: NewsItem; side: NewsItem[] } = {
 
 export const moreCampusNews: LinkItem = { label: 'More Campus News', href: `${ORIGIN}/news` };
 
-/** School Director's welcome message. */
 export const welcome = {
   title: 'Welcome to Ascencia Malta',
   paragraphs: [
@@ -177,10 +172,6 @@ export const welcome = {
   signOff: 'Your career starts here.',
 };
 
-/**
- * Leadership photos. On the original, names and roles exist only in the alt text,
- * so they are shown as photos (with that alt text) and no visible captions.
- */
 export const leaders: ImageAsset[] = [
   image(
     'team/tess.jpg',
@@ -219,7 +210,6 @@ export const missionVision: TextBlock[] = [
   },
   {
     title: 'Our Vision',
-    // The live page shows mis-encoded characters here ("5 â€“ 8", "studentsâ€™"); the intended "–" and "’" are used.
     paragraphs: [
       'The primary purpose of Ascencia Malta is to offer MQF levels 5 – 8 qualifications to EU and International students at affordable rates. These qualifications are accredited by the Malta Further and Higher Education Authority (MFHEA). An MFHEA accreditation ensures that qualifications undergo a thorough evaluation, aligning with the Malta and European Qualifications Frameworks. This recognition guarantees that the Ascencia Malta programmes meet quality standards and are recognised by employers worldwide, thus enhancing our students’ career prospects both locally and internationally. This would allow a wider, professional, and work base horizon to these students. It will also further support the country’s economy by attracting EU and International students and will further develop the education industry in Malta.',
     ],
@@ -228,7 +218,6 @@ export const missionVision: TextBlock[] = [
 
 export const campusLifeHeading: SectionCopy = { title: 'Our Campus Life' };
 
-/** Campus Life slides: every slide on the original carries the same caption. */
 const campusLifeAlts: [number, string][] = [
   [1, 'Ascencia Malta students collaborating during a study session with laptops'],
   [2, 'Campus2'],
@@ -242,7 +231,6 @@ const campusLifeAlts: [number, string][] = [
     'Ascencia Malta students and staff posing in front of a Christmas tree during a festive outing',
   ],
   [9, 'Ascencia Malta staff participating in a November awareness campaign'],
-  // The original alt is garbled ("CampAscencia … campaignus10"); the intended text is used.
   [10, 'Ascencia Malta staff participating in a Pink October awareness campaign'],
   [12, 'Students attending a guest lecture at Ascencia Malta'],
   [13, 'Ascencia Malta students on an educational tour of an industrial facility'],
@@ -263,7 +251,6 @@ export const successStoriesHeading: SectionCopy = {
   intro: 'Real students. Real transformations.',
 };
 
-/** All six reels from the original's slider, in its order, rendered with Instagram's own embed. */
 export const successStories: InstagramPost[] = [
   { permalink: 'https://www.instagram.com/reel/DGi2oTgIBP6/' },
   { permalink: 'https://www.instagram.com/reel/DHBvrBcorX-/' },

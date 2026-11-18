@@ -2,11 +2,9 @@ import { Children, useCallback, useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 import styles from './Carousel.module.css';
 
-/** How many slides fit the track at each breakpoint (fractions show a peek of the next slide). */
 type PerView = { base: number; sm?: number; md?: number; lg?: number };
 
 type CarouselProps = {
-  /** Accessible name of the carousel region. */
   label: string;
   perView: PerView;
   children: ReactNode;
@@ -14,14 +12,8 @@ type CarouselProps = {
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/**
- * A horizontally scrollable row of slides. It uses native scrolling (touch, trackpad, shift+wheel) with
- * CSS scroll-snap, so no carousel library or transform maths is needed. The arrow buttons move exactly
- * one slide per click and are disabled at either end.
- */
 function Carousel({ label, perView, children }: CarouselProps) {
   const trackRef = useRef<HTMLUListElement>(null);
-  /** Where an arrow-started smooth scroll is heading, so quick repeated clicks each move one more slide. */
   const targetLeftRef = useRef<number | null>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -42,7 +34,6 @@ function Carousel({ label, perView, children }: CarouselProps) {
     return () => window.removeEventListener('resize', updateArrows);
   }, [updateArrows]);
 
-  /** Scrolls to the slide before/after the one currently snapped to the start of the track. */
   const move = (direction: -1 | 1) => {
     const track = trackRef.current;
     const first = track?.firstElementChild as HTMLElement | null;
@@ -50,7 +41,7 @@ function Carousel({ label, perView, children }: CarouselProps) {
 
     const step = first.offsetWidth + parseFloat(getComputedStyle(track).columnGap || '0');
     const maxLeft = track.scrollWidth - track.clientWidth;
-    // Mid-animation, count from the slide we are already heading to rather than the half-way position.
+    // if a smooth scroll is still running, step from where it is heading
     const from = targetLeftRef.current ?? track.scrollLeft;
     const current = from >= maxLeft - 1 ? Math.ceil(maxLeft / step) : Math.round(from / step);
     const left = Math.min(Math.max((current + direction) * step, 0), maxLeft);

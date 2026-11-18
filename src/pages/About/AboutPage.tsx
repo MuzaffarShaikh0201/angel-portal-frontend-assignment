@@ -8,7 +8,6 @@ import CoreValues from './sections/CoreValues';
 import Lecturers from './sections/Lecturers';
 import Partners from './sections/Partners';
 
-/** About: sections in the same order as the original page. */
 function AboutPage() {
   return (
     <>

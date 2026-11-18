@@ -71,7 +71,6 @@ a.value:hover {
   }
 }
 
-/* The location card is twice as wide as the others, as on the original. */
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);

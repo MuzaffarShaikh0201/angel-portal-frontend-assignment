@@ -1,12 +1,8 @@
 import { image } from '../lib/asset';
 import type { CallToAction, SectionCopy, Stat } from '../types/content';
 
-/** Content shared by several pages. Verbatim visible copy from ascenciamalta.edu.mt. */
-
-/** Stats band (Home and About). The original animates these up from 0; these are the final values. */
 export const statsHeading: SectionCopy = { title: 'Ascencia Malta in Numbers' };
 
-/** About shows an eyebrow above the stats heading; Home does not. */
 export const statsEyebrowAbout = 'Explore us';
 
 export const stats: Stat[] = [
@@ -18,12 +14,10 @@ export const stats: Stat[] = [
   { value: '100%', label: 'Accredited Programmes (MFHEA & ATHE)' },
 ];
 
-/** "Join us!" call to action (all three pages). */
 export const joinUs: CallToAction = {
   title: 'Join us!',
   text: 'Do you wish to join the Ascencia Malta Community? The registration and admission procedure is simple and totally free. Our team can get back to you for any questions!',
   action: { label: 'GET IN TOUCH', href: '/contact' },
 };
 
-/** Decorative photo behind the About and Contact page banners. */
 export const pageBannerBackground = image('bg/breadcrumb_bg.webp', '', 1920, 400);

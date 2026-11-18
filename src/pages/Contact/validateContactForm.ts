@@ -11,17 +11,11 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_MIN_DIGITS = 6;
 const PHONE_MAX_DIGITS = 15;
 
-/**
- * Checks the fields top to bottom and returns the first problem, or null when the form is valid.
- * One error at a time, with the same messages as the original form. Two fixes over the original
- * script: an empty phone gets "Please Provide Contact No." (the original checked length first, so
- * that message never showed), and the phone limits count digits, as the messages say, so
- * spaces, "+" and "-" don't count towards them.
- */
 export function validateContactForm(values: ContactFormValues): ContactFormError | null {
   const name = values.name.trim();
   const email = values.email.trim();
   const phone = values.phone.trim();
+  // count digits only, so spaces, + and - are ignored
   const phoneDigits = phone.replace(/\D/g, '').length;
   const message = values.message.trim();
 

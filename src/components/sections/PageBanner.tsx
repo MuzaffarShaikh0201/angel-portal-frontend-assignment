@@ -7,7 +7,6 @@ type PageBannerProps = {
   intro?: string;
 };
 
-/** Photo banner at the top of inner pages (About, Contact). Holds the page's h1. */
 function PageBanner({ title, intro }: PageBannerProps) {
   return (
     <section className={styles.banner} aria-labelledby="page-title">

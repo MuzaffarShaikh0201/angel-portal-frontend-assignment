@@ -1,4 +1,3 @@
-/* The logo files are square with their own light background, so they fill the card edge to edge. */
 .logoCard {
   aspect-ratio: 1;
   overflow: hidden;

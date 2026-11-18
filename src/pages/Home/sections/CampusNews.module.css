@@ -1,4 +1,3 @@
-/* Phones: featured story first, then the four smaller ones. */
 .layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -99,7 +98,6 @@
   margin-top: var(--space-12);
 }
 
-/* Tablets: featured story across the top, the side columns below it. */
 @media (min-width: 640px) {
   .layout {
     grid-template-columns: repeat(2, 1fr);
@@ -114,7 +112,6 @@
   }
 }
 
-/* Desktop: two small stories | featured story | two small stories. */
 @media (min-width: 960px) {
   .layout {
     grid-template-columns: 1fr 1.7fr 1fr;

@@ -3,7 +3,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { accreditationGroups, accreditationsHeading } from '../../../content/home';
 import styles from './Accreditations.module.css';
 
-/** Accreditation, framework, membership and funding logos, grouped under their headings. */
 function Accreditations() {
   return (
     <Section tone="alt" labelledBy="accreditations-title">

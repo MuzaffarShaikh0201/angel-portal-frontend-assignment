@@ -3,7 +3,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { aboutFacts, aboutIntro, aboutMission } from '../../../content/about';
 import styles from './AboutIntro.module.css';
 
-/** Location and founding facts, the "About" text, then the mission with the graduation photo (as on the original). */
 function AboutIntro() {
   const { image } = aboutMission;
 

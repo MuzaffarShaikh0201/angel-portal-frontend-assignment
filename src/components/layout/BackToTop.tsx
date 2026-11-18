@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './BackToTop.module.css';
 
-/** Shown once the visitor has scrolled this far down the page. */
 const SHOW_AFTER_PX = 400;
 
-/**
- * Floating "back to top" button, as on the original site. It is hidden at the top of the page;
- * after the jump, focus moves to the main content so keyboard users are not left on a hidden button.
- */
 function BackToTop() {
   const [visible, setVisible] = useState(false);
 

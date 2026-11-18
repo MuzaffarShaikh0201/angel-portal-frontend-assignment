@@ -6,12 +6,10 @@ import NotFoundPage from './pages/NotFound/NotFoundPage';
 
 export type Route = {
   path: string;
-  /** Sets document.title while the route is active (the original page's own title). */
   title: string;
   component: ComponentType;
 };
 
-/** The route table: the single place that maps URLs to pages. */
 export const routes: readonly Route[] = [
   {
     path: '/',
@@ -30,7 +28,6 @@ export const routes: readonly Route[] = [
   },
 ];
 
-/** Rendered for any path not in the table. */
 export const notFoundRoute: Route = {
   path: '*',
   title: 'Not Found',

@@ -7,15 +7,9 @@ function readLocation(): Location {
   return { pathname: window.location.pathname, hash: window.location.hash };
 }
 
-/**
- * Minimal client-side router built on the History API.
- * - navigate() pushes a history entry and re-renders with the new path.
- * - popstate (browser back/forward) re-syncs state from window.location.
- * - After a navigate(), the page scrolls to the #hash target if present, otherwise to the top.
- */
 function RouterProvider({ children }: { children: ReactNode }) {
   const [location, setLocation] = useState<Location>(readLocation);
-  // Scroll only after our own navigations (and an initial #hash); back/forward keeps the browser's behaviour.
+  // only scroll after our own navigate() calls, back/forward keeps the browser behaviour
   const scrollPending = useRef(window.location.hash !== '');
 
   useEffect(() => {
@@ -43,7 +37,6 @@ function RouterProvider({ children }: { children: ReactNode }) {
     const next = url.pathname + url.search + url.hash;
     const current = window.location.pathname + window.location.search + window.location.hash;
 
-    // Re-clicking the current link scrolls again but doesn't add a duplicate history entry.
     if (next !== current) {
       window.history.pushState(null, '', next);
     }

@@ -12,7 +12,6 @@
   outline: none;
 }
 
-/* Hidden until focused with the keyboard, then shown above the header. */
 .skipLink {
   position: absolute;
   top: var(--space-2);

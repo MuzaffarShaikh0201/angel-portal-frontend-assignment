@@ -1,11 +1,6 @@
 import { asset } from '../lib/asset';
 import type { ContactItem, ImageAsset, LinkGroup, LinkItem, SocialLink } from '../types/content';
 
-/**
- * Site-wide content (header, footer, contact details).
- * Copy is verbatim and limited to text a visitor can actually see on ascenciamalta.edu.mt.
- */
-
 const ORIGIN = 'https://www.ascenciamalta.edu.mt';
 
 export const logo: ImageAsset = {
