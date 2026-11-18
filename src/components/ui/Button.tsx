@@ -4,7 +4,8 @@ import { buttonClassName, type ButtonVariant } from './buttonClassName';
 
 type CommonProps = {
   children: ReactNode;
-  /** primary = crimson fill, secondary = outlined, inverse = white fill on crimson bands. */
+  /** primary = crimson fill, secondary = outlined, inverse = white fill on crimson bands,
+   * ghost = white outline on photos and dark bands. */
   variant?: ButtonVariant;
   className?: string;
 };

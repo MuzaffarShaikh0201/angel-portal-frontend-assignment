@@ -62,6 +62,21 @@ export type LogoGroup = {
   logos: ImageAsset[];
 };
 
+/** A news story card linking to the full article on the original site. */
+export type NewsItem = {
+  title: string;
+  href: string;
+  image: ImageAsset;
+  /** Byline, shown on the featured story only. */
+  author?: string;
+};
+
+/** A captioned photo, e.g. a Campus Life slide. */
+export type GalleryItem = {
+  caption: string;
+  image: ImageAsset;
+};
+
 /** An Instagram post shown through Instagram's own embed. */
 export type InstagramPost = {
   permalink: string;

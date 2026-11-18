@@ -6,9 +6,12 @@ import type { ImageAsset } from '../types/content';
  */
 export const ASSET_BASE = 'https://www.ascenciamalta.edu.mt/assets/img';
 
-/** asset('team/tess.jpg') → 'https://www.ascenciamalta.edu.mt/assets/img/team/tess.jpg' */
+/**
+ * asset('team/tess.jpg') → 'https://www.ascenciamalta.edu.mt/assets/img/team/tess.jpg'.
+ * The path is URL-encoded, as some original file names contain spaces.
+ */
 export function asset(path: string): string {
-  return `${ASSET_BASE}/${path.replace(/^\/+/, '')}`;
+  return `${ASSET_BASE}/${encodeURI(path.replace(/^\/+/, ''))}`;
 }
 
 /**
