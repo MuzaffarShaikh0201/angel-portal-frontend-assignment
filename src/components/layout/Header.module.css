@@ -6,30 +6,6 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Dark strip with opening hours, phone and email. */
-.topBar {
-  background: var(--color-ink);
-  color: var(--color-on-dark-muted);
-  font-size: var(--font-size-xs);
-}
-
-.topBarInner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-1) var(--space-6);
-  padding-block: var(--space-2);
-}
-
-.topBarInner a {
-  color: var(--color-on-dark);
-  text-decoration: none;
-}
-
-.topBarInner a:hover {
-  text-decoration: underline;
-}
-
 .bar {
   display: flex;
   flex-wrap: wrap;

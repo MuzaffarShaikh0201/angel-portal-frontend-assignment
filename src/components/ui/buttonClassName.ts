@@ -1,6 +1,6 @@
 import styles from './Button.module.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'inverse';
+export type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'ghost';
 
 /**
  * Class list for a button variant. Shared by <Button> and by router links styled as buttons,

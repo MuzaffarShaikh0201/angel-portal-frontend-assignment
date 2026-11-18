@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
+import BackToTop from './BackToTop';
 import Footer from './Footer';
 import Header from './Header';
 import styles from './MainLayout.module.css';
 
-/** Page shell shared by every route: skip link, header, main landmark, footer. */
+/** Page shell shared by every route: skip link, header, main landmark, footer, back-to-top button. */
 function MainLayout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.layout}>
@@ -15,6 +16,7 @@ function MainLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

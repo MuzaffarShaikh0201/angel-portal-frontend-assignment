@@ -1,0 +1,131 @@
+/* Phones: featured story first, then the four smaller ones. */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.featuredColumn {
+  order: -1;
+}
+
+.column {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 330 / 269;
+  object-fit: cover;
+}
+
+.featured .image {
+  aspect-ratio: 590 / 558;
+  flex: 1;
+  min-height: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.title {
+  font-size: var(--font-size-md);
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+
+.featured .title {
+  font-size: var(--font-size-h3);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.card:hover .link {
+  color: var(--color-primary);
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.link:focus-visible::after {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: -3px;
+}
+
+.author {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-text);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+/* Tablets: featured story across the top, the side columns below it. */
+@media (min-width: 640px) {
+  .layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuredColumn {
+    grid-column: 1 / -1;
+  }
+
+  .featured .image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Desktop: two small stories | featured story | two small stories. */
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr 1.7fr 1fr;
+  }
+
+  .featuredColumn {
+    grid-column: auto;
+    order: 0;
+  }
+
+  .featured .image {
+    aspect-ratio: auto;
+  }
+}

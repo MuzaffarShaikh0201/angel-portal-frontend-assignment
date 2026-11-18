@@ -1,0 +1,91 @@
+.carousel {
+  --per-view: var(--per-view-base);
+  --gap: var(--space-6);
+}
+
+.track {
+  display: flex;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0 0 var(--space-2);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  /* The arrows replace the scrollbar; touch and trackpad scrolling still work. */
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Width that fits exactly --per-view slides (and their gaps) in the track. */
+.slide {
+  flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  border: 1.5px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arrow:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (min-width: 640px) {
+  .carousel {
+    --per-view: var(--per-view-sm);
+  }
+}
+
+@media (min-width: 960px) {
+  .carousel {
+    --per-view: var(--per-view-md);
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel {
+    --per-view: var(--per-view-lg);
+  }
+}

@@ -1,0 +1,47 @@
+.button {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  /* Hidden (and out of the tab order) until the page is scrolled. */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(var(--space-2));
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    visibility var(--transition-base),
+    background-color var(--transition-fast);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.button:hover {
+  background: var(--color-primary-dark);
+}
+
+.button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

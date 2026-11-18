@@ -1,9 +1,11 @@
 import { image } from '../lib/asset';
 import type {
+  GalleryItem,
   ImageAsset,
   InstagramPost,
   LinkItem,
   LogoGroup,
+  NewsItem,
   Programme,
   SectionCopy,
   TextBlock,
@@ -19,7 +21,8 @@ export const hero = {
   text: 'We are eager to give you the best education at Ascencia Malta',
   actions: [
     { label: 'Apply Now', href: '/contact' },
-    { label: 'explore programmes', href: '/#programmes' },
+    { label: 'Explore programmes', href: '/#programmes' },
+    { label: 'Talk with a teacher', href: '/contact' },
   ] satisfies LinkItem[],
   // Decorative background photo (CSS background on the original), so no alt text.
   background: image('hero/hero_img02.jpg', '', 1920, 790),
@@ -100,6 +103,67 @@ export const programmes: Programme[] = [
   },
 ];
 
+export const campusNewsHeading: SectionCopy = { title: 'Campus News' };
+
+/** The five stories on the original; the middle one is the large featured story with a byline. */
+export const campusNews: { featured: NewsItem; side: NewsItem[] } = {
+  featured: {
+    title: 'Open Day at Ascencia Malta',
+    href: `${ORIGIN}/news/open-day-june-2026-spot-admissions`,
+    image: image(
+      'blog/Open Day 2 (590 x 558).jpg',
+      'Students promoting the Ascencia Malta Open Day event',
+      590,
+      558,
+    ),
+    author: 'Ascencia Malta',
+  },
+  side: [
+    {
+      title: 'Beyond the Classroom: Our Journey at the ELT Football Tournament',
+      href: `${ORIGIN}/news/beyond-the-classroom-elt-football-tournament`,
+      image: image(
+        'blog/blog-img01.webp',
+        'Ascencia Malta football team posing at the ELT Football Tournament',
+        330,
+        269,
+      ),
+    },
+    {
+      title: 'Shaping the Future: Ascencia Malta at the Startup Festival',
+      href: `${ORIGIN}/news/shaping-the-future-ascencia-malta-startup-festival`,
+      image: image(
+        'blog/blog-img02.webp',
+        'Ascencia Malta students participating in a Startup Festival event',
+        330,
+        269,
+      ),
+    },
+    {
+      title: 'A Heritage Experience: Visiting the Archdiocese of Malta',
+      href: `${ORIGIN}/news/heritage-experience-archdiocese-of-malta-visit`,
+      image: image(
+        'blog/blog-img04.webp',
+        'Ascencia Malta students visiting the Archdiocese of Malta',
+        330,
+        269,
+      ),
+    },
+    {
+      title: 'Marketing in Motion: Inside the Coca-Cola Operations',
+      href: `${ORIGIN}/news/marketing-in-motion-coca-cola-operations`,
+      image: image(
+        'blog/blog-img05.webp',
+        'Ascencia Malta students visiting the Coca-Cola facility in Malta',
+        330,
+        269,
+      ),
+    },
+  ],
+};
+
+export const moreCampusNews: LinkItem = { label: 'More Campus News', href: `${ORIGIN}/news` };
+
 /** School Director's welcome message. */
 export const welcome = {
   title: 'Welcome to Ascencia Malta',
@@ -144,7 +208,7 @@ export const leaders: ImageAsset[] = [
   ),
 ];
 
-export const missionVisionHeading: SectionCopy = { title: 'our mission and vision' };
+export const missionVisionHeading: SectionCopy = { title: 'Our mission and vision' };
 
 export const missionVision: TextBlock[] = [
   {
@@ -162,17 +226,51 @@ export const missionVision: TextBlock[] = [
   },
 ];
 
+export const campusLifeHeading: SectionCopy = { title: 'Our Campus Life' };
+
+/** Campus Life slides: every slide on the original carries the same caption. */
+const campusLifeAlts: [number, string][] = [
+  [1, 'Ascencia Malta students collaborating during a study session with laptops'],
+  [2, 'Campus2'],
+  [3, 'Ascencia Malta students learning during an educational visit to a company facility'],
+  [4, 'Ascencia Malta students celebrating the festive season with Christmas-themed props'],
+  [5, 'Students attending a classroom lecture at Ascencia Malta'],
+  [6, 'Lecturer delivering a classroom session to students at Ascencia Malta'],
+  [7, 'Ascencia Malta staff and guests posing together at a formal awards event'],
+  [
+    8,
+    'Ascencia Malta students and staff posing in front of a Christmas tree during a festive outing',
+  ],
+  [9, 'Ascencia Malta staff participating in a November awareness campaign'],
+  // The original alt is garbled ("CampAscencia … campaignus10"); the intended text is used.
+  [10, 'Ascencia Malta staff participating in a Pink October awareness campaign'],
+  [12, 'Students attending a guest lecture at Ascencia Malta'],
+  [13, 'Ascencia Malta students on an educational tour of an industrial facility'],
+  [14, 'Ascencia Malta students participating in the Startup Festival'],
+  [15, 'Ascencia Malta football team posing at the AVC ELT Cup tournament'],
+  [16, 'Presenter delivering an information session to students at Ascencia Malta'],
+  [17, 'Presenter explaining Business School programmes at Ascencia Malta'],
+];
+
+export const campusLife: GalleryItem[] = campusLifeAlts.map(([n, alt]) => ({
+  caption: 'Cultural Experiences',
+  image: image(`campus/campus-img${String(n).padStart(2, '0')}.webp`, alt, 648, 487),
+}));
+
 export const successStoriesHeading: SectionCopy = {
   eyebrow: 'Student Voices',
   title: 'Success Stories',
   intro: 'Real students. Real transformations.',
 };
 
-/** The same three reels as the original, rendered with Instagram's own embed. */
+/** All six reels from the original's slider, in its order, rendered with Instagram's own embed. */
 export const successStories: InstagramPost[] = [
   { permalink: 'https://www.instagram.com/reel/DGi2oTgIBP6/' },
   { permalink: 'https://www.instagram.com/reel/DHBvrBcorX-/' },
   { permalink: 'https://www.instagram.com/reel/DRPnUL_DGtr/' },
+  { permalink: 'https://www.instagram.com/reel/DL1_E-3IZfI/' },
+  { permalink: 'https://www.instagram.com/reel/DTh5uPWlPUR/' },
+  { permalink: 'https://www.instagram.com/reel/DFC2xujoVO9/' },
 ];
 
 export const accreditationsHeading: SectionCopy = {

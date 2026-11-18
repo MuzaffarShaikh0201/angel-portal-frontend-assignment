@@ -47,3 +47,14 @@
 .inverse:hover {
   background: var(--color-primary-soft);
 }
+
+.ghost {
+  background: transparent;
+  border-color: var(--color-on-dark);
+  color: var(--color-on-dark);
+}
+
+.ghost:hover {
+  background: var(--color-on-dark);
+  color: var(--color-ink);
+}

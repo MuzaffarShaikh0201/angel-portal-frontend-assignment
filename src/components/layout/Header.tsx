@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { email, headerCta, logo, mainNav, officeHours, phone } from '../../content/site';
+import { headerCta, logo, mainNav } from '../../content/site';
 import Link from '../../router/Link';
 import { buttonClassName } from '../ui/buttonClassName';
 import Container from '../ui/Container';
@@ -23,15 +23,6 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.topBar}>
-        <Container className={styles.topBarInner}>
-          <span>
-            {officeHours} · <a href={phone.href}>{phone.label}</a>
-          </span>
-          <a href={email.href}>{email.label}</a>
-        </Container>
-      </div>
-
       <Container className={styles.bar}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
           <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} />
