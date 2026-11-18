@@ -1,17 +1,25 @@
-import Section from '../../components/ui/Section';
-import SectionHeading from '../../components/ui/SectionHeading';
+import CtaBanner from '../../components/sections/CtaBanner';
+import PageBanner from '../../components/sections/PageBanner';
+import StatsBand from '../../components/sections/StatsBand';
+import { aboutBanner } from '../../content/about';
+import { statsEyebrowAbout } from '../../content/shared';
+import AboutIntro from './sections/AboutIntro';
+import CoreValues from './sections/CoreValues';
+import Lecturers from './sections/Lecturers';
+import Partners from './sections/Partners';
 
-// Placeholder until feat/about-page builds the full set of sections.
+/** About: sections in the same order as the original page. */
 function AboutPage() {
   return (
-    <Section tone="alt" labelledBy="about-title">
-      <SectionHeading
-        id="about-title"
-        level={1}
-        eyebrow="About us"
-        title="We are eager to give you the best education"
-      />
-    </Section>
+    <>
+      <PageBanner title={aboutBanner.title} intro={aboutBanner.intro} />
+      <AboutIntro />
+      <CoreValues />
+      <Lecturers />
+      <StatsBand eyebrow={statsEyebrowAbout} />
+      <Partners />
+      <CtaBanner />
+    </>
   );
 }
 

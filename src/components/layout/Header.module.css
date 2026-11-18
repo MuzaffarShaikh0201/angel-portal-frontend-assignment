@@ -101,8 +101,9 @@
   list-style: none;
 }
 
+/* inline-flex: the link (and its active underline) is only as wide as its text, in both the menu and the desktop bar. */
 .navLink {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   min-height: var(--touch-target);
   font-size: 0.9375rem;
