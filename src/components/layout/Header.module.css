@@ -24,7 +24,6 @@
   height: 44px;
 }
 
-/* Mobile: hamburger toggle + collapsible nav. */
 .menuToggle {
   display: inline-flex;
   align-items: center;
@@ -67,7 +66,6 @@
   top: 6px;
 }
 
-/* The hamburger turns into an "X" while the menu is open. */
 .menuToggle[aria-expanded='true'] .menuIcon {
   background: transparent;
 }
@@ -101,7 +99,6 @@
   list-style: none;
 }
 
-/* inline-flex: the link (and its active underline) is only as wide as its text, in both the menu and the desktop bar. */
 .navLink {
   display: inline-flex;
   align-items: center;
@@ -122,7 +119,6 @@
   border-bottom-color: var(--color-primary);
 }
 
-/* Desktop: inline nav, no toggle. */
 @media (min-width: 960px) {
   .menuToggle {
     display: none;

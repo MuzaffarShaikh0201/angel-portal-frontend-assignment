@@ -4,7 +4,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { campusLife, campusLifeHeading } from '../../../content/home';
 import styles from './CampusLife.module.css';
 
-/** Photo carousel of campus life; each photo carries its caption over the bottom edge. */
 function CampusLife() {
   return (
     <Section tone="alt" labelledBy="campus-life-title">

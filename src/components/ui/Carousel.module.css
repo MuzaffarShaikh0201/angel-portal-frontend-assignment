@@ -12,7 +12,6 @@
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
-  /* The arrows replace the scrollbar; touch and trackpad scrolling still work. */
   scrollbar-width: none;
 }
 
@@ -20,7 +19,6 @@
   display: none;
 }
 
-/* Width that fits exactly --per-view slides (and their gaps) in the track. */
 .slide {
   flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
   min-width: 0;

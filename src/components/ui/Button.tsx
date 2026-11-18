@@ -4,8 +4,6 @@ import { buttonClassName, type ButtonVariant } from './buttonClassName';
 
 type CommonProps = {
   children: ReactNode;
-  /** primary = crimson fill, secondary = outlined, inverse = white fill on crimson bands,
-   * ghost = white outline on photos and dark bands. */
   variant?: ButtonVariant;
   className?: string;
 };
@@ -21,10 +19,6 @@ type ButtonAsButton = CommonProps &
 
 export type ButtonProps = ButtonAsLink | ButtonAsButton;
 
-/**
- * Renders a link when given an href (navigation) and a <button> otherwise (actions),
- * so the element always matches its semantics. Links go through the router <Link>.
- */
 function Button(props: ButtonProps) {
   if (props.href !== undefined) {
     const { href, variant, className, children } = props;

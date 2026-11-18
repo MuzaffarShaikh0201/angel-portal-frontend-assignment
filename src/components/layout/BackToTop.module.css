@@ -15,7 +15,6 @@
   color: var(--color-on-dark);
   box-shadow: var(--shadow-card);
   cursor: pointer;
-  /* Hidden (and out of the tab order) until the page is scrolled. */
   visibility: hidden;
   opacity: 0;
   transform: translateY(var(--space-2));

@@ -6,7 +6,6 @@ type ContainerProps = {
   className?: string;
 };
 
-/** Centres content and caps its width at --container-max with responsive gutters. */
 function Container({ children, className }: ContainerProps) {
   return (
     <div className={className ? `${styles.container} ${className}` : styles.container}>

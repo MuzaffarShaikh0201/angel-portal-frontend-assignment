@@ -9,7 +9,6 @@
   background: var(--color-ink);
 }
 
-/* Photo fills the band; a dark gradient on top keeps the white text readable. */
 .background {
   position: absolute;
   inset: 0;

@@ -4,16 +4,10 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { successStories, successStoriesHeading } from '../../../content/home';
 import styles from './SuccessStories.module.css';
 
-/** permalink https://www.instagram.com/reel/<id>/ → Instagram's official embed page for that post. */
 function embedUrl(permalink: string): string {
   return `${permalink.replace(/\/?$/, '/')}embed/captioned/`;
 }
 
-/**
- * All of the original's Instagram reels, shown through Instagram's own iframe embed
- * (the real post card: header, video, likes, caption) without loading Instagram's embed.js,
- * in a carousel that moves one post per arrow click.
- */
 function SuccessStories() {
   const { eyebrow, title, intro } = successStoriesHeading;
 

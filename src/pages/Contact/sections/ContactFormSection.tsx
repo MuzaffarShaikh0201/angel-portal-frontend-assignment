@@ -4,10 +4,6 @@ import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import styles from './ContactFormSection.module.css';
 
-/**
- * The form beside a Google map of the campus (stacked on small screens), then the help cards.
- * One band, as on the original.
- */
 function ContactFormSection() {
   return (
     <Section tone="alt" labelledBy="contact-form-title">

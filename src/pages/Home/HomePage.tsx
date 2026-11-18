@@ -9,7 +9,6 @@ import Programmes from './sections/Programmes';
 import SuccessStories from './sections/SuccessStories';
 import Welcome from './sections/Welcome';
 
-/** Home: sections in the same order as the original page. */
 function HomePage() {
   return (
     <>

@@ -46,7 +46,6 @@
   text-decoration: none;
 }
 
-/* Stretch the link over the whole card. */
 .link::after {
   content: '';
   position: absolute;

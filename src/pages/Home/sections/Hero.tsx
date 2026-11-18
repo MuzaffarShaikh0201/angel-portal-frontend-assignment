@@ -3,7 +3,6 @@ import Container from '../../../components/ui/Container';
 import { hero } from '../../../content/home';
 import styles from './Hero.module.css';
 
-/** Full-width photo banner holding the page's h1 and its three actions. */
 function Hero() {
   const [apply, explore, talk] = hero.actions;
 

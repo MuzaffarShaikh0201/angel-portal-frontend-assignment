@@ -4,7 +4,6 @@
   font-size: 0.9375rem;
 }
 
-/* Columns reflow on their own: 1 on phones, 2 on tablets, 4 on desktop. */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

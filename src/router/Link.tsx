@@ -4,17 +4,10 @@ import { useRouter } from './useRouter';
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
-/** Ctrl/Cmd/Shift/Alt-clicks and non-left clicks mean "new tab/window": let the browser handle them. */
 function isModifiedClick(event: MouseEvent<HTMLAnchorElement>): boolean {
   return event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
 }
 
-/**
- * A real <a href> (crawlable, works without JS) that performs client-side navigation
- * for plain left-clicks on internal URLs and marks itself aria-current="page" when active.
- * External links, new-tab targets and modified clicks fall through to the browser.
- * External http(s) links open in a new tab with rel="noopener noreferrer" (as on the original site).
- */
 function Link({ href, onClick, target, rel, ...rest }: LinkProps) {
   const { pathname, navigate } = useRouter();
   const internal = isInternalHref(href);

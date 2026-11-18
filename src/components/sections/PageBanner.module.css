@@ -18,7 +18,6 @@
   object-fit: cover;
 }
 
-/* Dark overlay so the white title stays readable over the photo. */
 .banner::after {
   content: '';
   position: absolute;

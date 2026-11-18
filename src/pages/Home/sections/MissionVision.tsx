@@ -3,7 +3,6 @@ import SectionHeading from '../../../components/ui/SectionHeading';
 import { missionVision, missionVisionHeading } from '../../../content/home';
 import styles from './MissionVision.module.css';
 
-/** Two side-by-side statements: Our Mission and Our Vision. */
 function MissionVision() {
   return (
     <Section labelledBy="mission-vision-title">

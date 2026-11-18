@@ -4,11 +4,9 @@ import SectionHeading from '../ui/SectionHeading';
 import styles from './StatsBand.module.css';
 
 type StatsBandProps = {
-  /** About shows an eyebrow above the heading; Home does not. */
   eyebrow?: string;
 };
 
-/** Dark "Ascencia Malta in Numbers" band, shared by Home and About. */
 function StatsBand({ eyebrow }: StatsBandProps) {
   return (
     <Section tone="dark" labelledBy="stats-title">

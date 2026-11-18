@@ -3,7 +3,6 @@ import PageBanner from '../../components/sections/PageBanner';
 import { contactBanner } from '../../content/contact';
 import ContactFormSection from './sections/ContactFormSection';
 
-/** Contact: sections in the same order as the original page. */
 function ContactPage() {
   return (
     <>

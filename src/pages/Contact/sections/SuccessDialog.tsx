@@ -8,11 +8,6 @@ type SuccessDialogProps = {
   onClose: () => void;
 };
 
-/**
- * "Successfully Send" popup shown after a valid submit.
- * A native modal <dialog>: it traps focus, closes on Escape and returns focus to the
- * submit button, with no extra code.
- */
 function SuccessDialog({ open, onClose }: SuccessDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const { title, text, dismiss } = contactForm.success;
@@ -32,7 +27,7 @@ function SuccessDialog({ open, onClose }: SuccessDialogProps) {
       aria-describedby="success-text"
       onClose={onClose}
       onClick={(event) => {
-        // A click on the backdrop lands on the <dialog> itself, not its content.
+        // backdrop click
         if (event.target === event.currentTarget) onClose();
       }}
     >

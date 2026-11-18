@@ -1,14 +1,11 @@
 import { image } from '../lib/asset';
 import type { ImageAsset, SectionCopy, TextBlock } from '../types/content';
 
-/** About page content. Verbatim visible copy (and original alt text) from ascenciamalta.edu.mt/ascencia-malta. */
-
 export const aboutBanner: SectionCopy = {
   title: 'About us',
   intro: 'We are eager to give you the best education',
 };
 
-/** The two facts shown under the banner. */
 export const aboutFacts: TextBlock[] = [
   {
     title: 'LOCATION',
@@ -26,7 +23,6 @@ export const aboutIntro = {
   ],
 };
 
-/** Mission statement, followed on the original by a wide graduation photo. */
 export const aboutMission = {
   title: 'MISSION',
   paragraphs: [
@@ -45,7 +41,6 @@ export const coreValuesHeading: SectionCopy = {
   intro: "Ascencia Malta's commitment to Quality Education is rooted in Diversity",
 };
 
-/** The graduation-cap icon beside each core value (decorative: the title says it all). */
 export const coreValueIcon = image('icon/am_02.svg', '', 34, 34);
 
 export const coreValues: TextBlock[] = [
@@ -96,7 +91,6 @@ export const partnersHeading: SectionCopy = {
   intro: 'We are proud to be partnered with the following institutions!',
 };
 
-/** Logo slider, as on the original; institution names exist only in the alt text. */
 export const partners: ImageAsset[] = [
   image('team/team_01.webp', 'Amity University Logo', 400, 400),
   image('team/team_02.webp', 'Jaipuria Institute of Management Logo', 400, 400),

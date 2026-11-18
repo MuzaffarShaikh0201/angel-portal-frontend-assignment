@@ -2,11 +2,6 @@ import { image } from '../lib/asset';
 import type { ContactCard, FormFieldCopy, SectionCopy } from '../types/content';
 import { email, officeHours, phone } from './site';
 
-/**
- * Contact page content. Verbatim visible copy from ascenciamalta.edu.mt/contact,
- * including the form's validation and success messages from the original page script.
- */
-
 export const contactBanner: SectionCopy = { title: 'Contact us' };
 
 export type ContactField = 'name' | 'email' | 'phone' | 'message';
@@ -29,7 +24,6 @@ export const contactForm = {
   },
 };
 
-/** Validation messages, in the order the checks run (first failure wins). */
 export const contactFormErrors = {
   nameRequired: 'Please enter your name',
   emailRequired: 'Please enter email id',
@@ -40,7 +34,6 @@ export const contactFormErrors = {
   messageRequired: 'Please enter message',
 } as const;
 
-/** Google Maps embed beside the form, the same query the original uses. */
 export const contactMap = {
   src: 'https://maps.google.com/maps?width=600&height=400&hl=en&q=Ascencia%20Malta&t=&z=14&ie=UTF8&iwloc=B&output=embed',
   title: 'Ascencia Malta on Google Maps',
@@ -48,7 +41,6 @@ export const contactMap = {
 
 export const contactInfoHeading: SectionCopy = { title: 'Let us know how we can help' };
 
-/** Icons are decorative (the card title says what each one is), so their alt is empty. */
 export const contactCards: ContactCard[] = [
   {
     title: 'Call Us On',

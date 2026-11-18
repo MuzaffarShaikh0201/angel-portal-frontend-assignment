@@ -6,7 +6,6 @@ import Link from '../../../router/Link';
 import type { NewsItem } from '../../../types/content';
 import styles from './CampusNews.module.css';
 
-/** A story card. As with programme cards, the title link is stretched over the whole card. */
 function NewsCard({ item, featured = false }: { item: NewsItem; featured?: boolean }) {
   return (
     <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
@@ -30,7 +29,6 @@ function NewsCard({ item, featured = false }: { item: NewsItem; featured?: boole
   );
 }
 
-/** Latest stories: the featured story in the middle, two smaller ones on each side (as on the original). */
 function CampusNews() {
   const { featured, side } = campusNews;
   const half = Math.ceil(side.length / 2);

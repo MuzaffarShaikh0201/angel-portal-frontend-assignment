@@ -22,7 +22,6 @@
   letter-spacing: var(--letter-spacing-heading);
 }
 
-/* Phones and tablets: the portraits come above the message. */
 .portraits {
   order: -1;
   display: grid;
@@ -46,7 +45,6 @@
     gap: var(--space-16);
   }
 
-  /* Keep the photos in view while the longer message scrolls past. */
   .portraits {
     order: 0;
     position: sticky;

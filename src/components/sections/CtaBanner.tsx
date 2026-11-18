@@ -3,7 +3,6 @@ import Button from '../ui/Button';
 import Section from '../ui/Section';
 import styles from './CtaBanner.module.css';
 
-/** Crimson "Join us!" call to action at the bottom of every page. */
 function CtaBanner() {
   return (
     <Section labelledBy="join-us-title">

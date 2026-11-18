@@ -2,7 +2,6 @@ import Section from '../../../components/ui/Section';
 import { lecturers } from '../../../content/about';
 import styles from './Lecturers.module.css';
 
-/** "Our Lecturers": group photo beside the text (photo first on small screens, as on the original). */
 function Lecturers() {
   const { title, intro, paragraphs, image } = lecturers;
 
