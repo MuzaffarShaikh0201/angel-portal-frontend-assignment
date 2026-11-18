@@ -93,7 +93,9 @@ export type ContactCard = {
   title: string;
   text: string;
   value: string;
+  /** Present when the value is actionable (tel:, mailto:). */
   href?: string;
+  icon: ImageAsset;
 };
 
 export type FormFieldCopy = {
