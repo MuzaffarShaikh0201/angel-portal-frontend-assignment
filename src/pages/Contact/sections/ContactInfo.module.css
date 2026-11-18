@@ -1,0 +1,83 @@
+.info {
+  margin-top: var(--section-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+}
+
+.icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.title {
+  font-size: var(--font-size-h3);
+}
+
+.value {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+a.value {
+  text-decoration: none;
+}
+
+a.value:hover {
+  color: var(--color-primary-text);
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* The location card is twice as wide as the others, as on the original. */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card:last-child {
+    grid-column: span 2;
+  }
+}

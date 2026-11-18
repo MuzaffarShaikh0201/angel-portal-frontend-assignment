@@ -1,12 +1,16 @@
-import Section from '../../components/ui/Section';
-import SectionHeading from '../../components/ui/SectionHeading';
+import CtaBanner from '../../components/sections/CtaBanner';
+import PageBanner from '../../components/sections/PageBanner';
+import { contactBanner } from '../../content/contact';
+import ContactFormSection from './sections/ContactFormSection';
 
-// Placeholder until feat/contact-page builds the form and contact details.
+/** Contact: sections in the same order as the original page. */
 function ContactPage() {
   return (
-    <Section tone="alt" labelledBy="contact-title">
-      <SectionHeading id="contact-title" level={1} title="contact us" />
-    </Section>
+    <>
+      <PageBanner title={contactBanner.title} />
+      <ContactFormSection />
+      <CtaBanner />
+    </>
   );
 }
 
